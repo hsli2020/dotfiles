@@ -1,0 +1,78 @@
+[push]
+	default = matching
+[core]
+	trustctime = false
+	editor = vim
+	filemode = false
+	pager = less -F -X
+	preloadindex = true
+	fscache = true
+	autocrlf = false
+    safecrlf = false
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = vimdiff
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
+[alias]
+	aa  = add --all
+	ai  = add --interactive
+	au  = add --update
+	di  = diff
+	dc  = diff --cached
+	last = log -1 --stat
+	cp = cherry-pick
+	cpk = cherry-pick
+	co = checkout
+	cb = checkout -b
+	cl = clone
+    cl1 = clone --depth=1
+	ci = commit -m
+	cc = commit -nC HEAD
+	bc = branch --contains
+	bcc = branch --contains
+	s  = show
+	st = status
+	br = branch
+	brr = branch -r
+	b   = branch
+	unstage = reset HEAD --
+	dc = diff --cached
+	l  = log --oneline -35 --date=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen(%an)%Creset'
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %Cblue<%an>%Creset' --abbrev-commit --date=short --all
+	ls = log --oneline -15 --date=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen(%an)%Creset'
+	ll = log --oneline -40 --date=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen(%an)%Creset'
+	la = log --oneline     --date=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen(%an)%Creset'
+	lp = log --follow -p
+	lr = log --oneline -20 --date=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen(%an)%Creset' --reverse
+    f  = show --pretty="format:" --name-only --no-commit-id
+	mg = merge
+	mf = ls-files -m
+	msq = merge --squash
+	rbs = rebase -i
+	rbsi = rebase -i
+	rbs2 = rebase -i HEAD~2
+	rbs3 = rebase -i HEAD~3
+	rbs4 = rebase -i HEAD~4
+    deleted = log --diff-filter=D --summary
+    lastchg = rev-list -n 1 HEAD -- 
+    authors = "!git log --format='%aN - %aE' | sort -u"
+    unmod   = "!git ls-files -m | xargs git co"
+    unstage = reset --
+    amend   = commit --amend
+[user]
+	email = lihsca@gmail.com
+	name = Hanson Li
+[gc]
+	auto = 256
